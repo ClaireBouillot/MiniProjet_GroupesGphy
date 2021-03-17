@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="121.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="27.0" layoutY="53.0" text="Etes-vous sûr de vouloir quitter l'application ?" />
+      <Label layoutX="120.0" layoutY="21.0" text="Attention !" />
+      <Button layoutX="84.0" layoutY="82.0" mnemonicParsing="false" text="Oui" />
+      <Button layoutX="177.0" layoutY="82.0" mnemonicParsing="false" text="Non" />
+   </children>
+</AnchorPane>

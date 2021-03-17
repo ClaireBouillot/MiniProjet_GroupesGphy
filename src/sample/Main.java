@@ -1,23 +1,48 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-public class Main extends Application {
-
+import java.util.ArrayList;
+import java.util.Date;
+/**
+ * The StepTwo of JavafX tutorial
+ * Linking FXML and java code via java
+ *
+ * @author Patrick Girard
+ * @version 22/03/2020
+ */
+public class Main extends Application
+{
+    private ArrayList<Personne> listeP;
+    private Personne P;
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
-    }
+    public void start(Stage stage) throws Exception
+    {
+        listeP=new ArrayList<Personne>();
+        SimpleDate date = new SimpleDate(12,2,2008);
+        P=new Personne("toto","tutu",date,"m1","biotech");
+        listeP.add(P);
 
+        Parent root = FXMLLoader.load(getClass().getResource("fx.fxml"));
+        Scene scene = new Scene (root);
 
-    public static void main(String[] args) {
-        launch(args);
+        stage.setTitle("Registre");
+        stage.setScene(scene);
+
+        // Show the Stage (window)
+        stage.show();
+
     }
 }
