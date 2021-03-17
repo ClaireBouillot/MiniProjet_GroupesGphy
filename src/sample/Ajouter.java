@@ -54,7 +54,7 @@ public class Ajouter
         // pers=P.get(i);
 
         // table.getItems().add(i,pers);
-        Parent root = FXMLLoader.load(getClass().getResource("ajout.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("src/sample/ajout.fxml"));
         Scene scene = new Scene (root);
         secondaryStage = new Stage();
 

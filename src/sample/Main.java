@@ -3,6 +3,7 @@ package sample;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -12,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+
 import javafx.scene.Parent;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,6 +24,7 @@ import java.util.Date;
  * @author Patrick Girard
  * @version 22/03/2020
  */
+
 public class Main extends Application
 {
     private ArrayList<Personne> listeP;
@@ -35,8 +37,8 @@ public class Main extends Application
         P=new Personne("toto","tutu",date,"m1","biotech");
         listeP.add(P);
 
-        Parent root = FXMLLoader.load(getClass().getResource("fx.fxml"));
-        Scene scene = new Scene (root);
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fx.fxml"));
+       Scene scene = new Scene (root);
 
         stage.setTitle("Registre");
         stage.setScene(scene);
