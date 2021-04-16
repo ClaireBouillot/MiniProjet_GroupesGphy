@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -29,61 +30,24 @@ import java.util.ArrayList;
 
 public class Main extends Application
 {
-    private static Stage primaryStage;
-    private static BorderPane mainLayout;
-    private ArrayList<Personne> listeP;
-    private Personne P;
-
-
 
     @Override
     public void start(Stage stage) throws Exception
     {
-        this.primaryStage=stage;
-        this.primaryStage.setTitle("Registre");
-
-        showMainView();
-
-        /*listeP=new ArrayList<Personne>();
-        SimpleDate date = new SimpleDate(12,2,2008);
-        P=new Personne("toto","tutu",date,"m1","biotech");
-        listeP.add(P);
-
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fx.fxml"));
-       Scene scene = new Scene (root);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("view/newfx.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene (root);
 
         stage.setTitle("Registre");
-        stage.setScene(scene);*/
+        stage.setScene(scene);
 
         // Show the Stage (window)
-        //stage.show();
+        stage.show();
 
     }
 
-    public void showMainView() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/newfx.fxml"));//Main.class.getResource("fx.fxml"));
-        mainLayout = loader.load();
-        Scene scene = new Scene(mainLayout);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
 
-    public static void showAjouter() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/newAjout.fxml"));
-        BorderPane ajout = loader.load();
-
-        Stage addStage = new Stage();
-        addStage.setTitle("Ajouter");
-        addStage.initModality(Modality.WINDOW_MODAL);
-        addStage.initOwner(primaryStage);
-        //mainLayout.setCenter(ajout);
-        Scene scene = new Scene(ajout);
-        addStage.setScene(scene);
-        addStage.showAndWait();
-
-    }
 
 
     public static void Main(String[] args) {

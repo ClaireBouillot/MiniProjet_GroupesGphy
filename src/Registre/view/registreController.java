@@ -4,17 +4,23 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
 
 import Registre.Main;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * Listener pour l'ajout
@@ -47,25 +53,33 @@ public class registreController
         return person;
     }
 
-    @FXML
-    private void goAjouter() throws IOException{
-        main.showAjouter();
-    }
-
 
     @FXML
     private void initialize() {
-        nomCol.setCellValueFactory(new PropertyValueFactory<Personne, String>("nomField"));
-        prenomCol.setCellValueFactory(new PropertyValueFactory<Personne, String>("prenomField"));
-        dateNCol.setCellValueFactory(new PropertyValueFactory<Personne, LocalDate>("dateNaissance"));
-        promotionCol.setCellValueFactory(new PropertyValueFactory<Personne, String>("promotionBox"));
-        optionCol.setCellValueFactory(new PropertyValueFactory<Personne, String>("optionBox"));
+        nomCol.setCellValueFactory(new PropertyValueFactory<Personne, String>("nomP"));
+        prenomCol.setCellValueFactory(new PropertyValueFactory<Personne, String>("prenomP"));
+        dateNCol.setCellValueFactory(new PropertyValueFactory<Personne, LocalDate>("annivP"));
+        promotionCol.setCellValueFactory(new PropertyValueFactory<Personne, String>("promoP"));
+        optionCol.setCellValueFactory(new PropertyValueFactory<Personne, String>("optionP"));
 
         table.setItems(getPersonnes());
 
     }
 
+    public void showAjouter(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("view/newAjout.fxml"));
+        Parent ajout_parent = loader.load();
 
+        newAjoutController addController = loader.getController();
+        addController.setTableItems(table.getItems());
+
+        Scene scene = new Scene(ajout_parent);
+        Stage app_stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene);
+        app_stage.show();
+
+    }
 
      public void setTableItems(ObservableList<Personne> pers) throws IOException {
          FXMLLoader loader = new FXMLLoader(getClass().getResource("newfx.fxml"));
