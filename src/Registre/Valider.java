@@ -1,4 +1,4 @@
-package sample;
+package Registre;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
