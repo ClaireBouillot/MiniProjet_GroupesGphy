@@ -1,24 +1,15 @@
 package Registre.view;
-import javafx.beans.Observable;
+
+import Registre.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.Month;
-
-import Registre.Main;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-
+import java.time.LocalDate;
+import java.time.Month;
 
 /**
  * Listener pour l'ajout
@@ -26,21 +17,29 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * @author CLaire, Lucie, Rachel
  * @version 16/03/2021
  **/
-public class registreController
-{
+public class registreController {
     private Main main;
 
-    @FXML private TableView<Personne> table;
-    @FXML private TableColumn<Personne, String> nomCol;
-    @FXML private TableColumn<Personne, String> prenomCol;
-    @FXML private TableColumn<Personne, LocalDate> dateNCol;
-    @FXML private TableColumn<Personne, String> promotionCol;
-    @FXML private TableColumn<Personne, String> optionCol;
+    @FXML
+    private TableView<Personne> table;
+    @FXML
+    private TableColumn<Personne, String> nomCol;
+    @FXML
+    private TableColumn<Personne, String> prenomCol;
+    @FXML
+    private TableColumn<Personne, LocalDate> dateNCol;
+    @FXML
+    private TableColumn<Personne, String> promotionCol;
+    @FXML
+    private TableColumn<Personne, String> optionCol;
 
-    public registreController(){}
+    public registreController() {
+    }
+
     ObservableList<Personne> personData = FXCollections.observableArrayList();
+
     public ObservableList<Personne> getPersonnes() {
-        personData.add(new Personne("Villard", "Rachel",LocalDate.of(1999, Month.JANUARY,1),"M1","Biotech"));
+        personData.add(new Personne("Villard", "Rachel", LocalDate.of(1999, Month.JANUARY, 1), "M1", "Biotech"));
 
         return personData;
     }
@@ -50,16 +49,16 @@ public class registreController
      * after the fxml file has been loaded.
      */
     @FXML
-    private void initialize() {
-        nomCol.setCellValueFactory(new PropertyValueFactory("nomP"));// -> cellData.getValue().nomProperty());
-        prenomCol.setCellValueFactory(new PropertyValueFactory("prenomP"));//cellData -> cellData.getValue().prenomProperty());
-        dateNCol.setCellValueFactory(new PropertyValueFactory("annivP"));//cellData -> cellData.getValue().annivProperty());
-        promotionCol.setCellValueFactory(new PropertyValueFactory("promoP"));//cellData -> cellData.getValue().promoProperty());
-        optionCol.setCellValueFactory(new PropertyValueFactory("optionP"));//cellData -> cellData.getValue().optionProperty());
+  /**  private void initialize() {
+        nomCol.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
+        prenomCol.setCellValueFactory(cellData -> cellData.getValue().prenomProperty());
+        dateNCol.setCellValueFactory(cellData -> cellData.getValue().annivProperty());
+        promotionCol.setCellValueFactory(cellData -> cellData.getValue().promoProperty());
+        optionCol.setCellValueFactory(cellData -> cellData.getValue().optionProperty());
 
-        //table.setItems(getPersonnes());
+        table.setItems(getPersonnes());
 
-    }
+    }**/
 
     /**
      * Is called by the main application to give a reference back to itself.
@@ -80,13 +79,13 @@ public class registreController
     @FXML
     private void handleNewPerson() {
         Personne tempPerson = new Personne();
-        boolean okClicked = main.showPersonEditDialog(tempPerson);
+       /** boolean okClicked = main.showPersonEditDialog(tempPerson);
         if (okClicked) {
             getPersonnes().add(tempPerson);
-        }
+        }**/
     }
 
-/*    *//**
+    /*    *//**
      * Called when the user clicks the edit button. Opens a dialog to edit
      * details for the selected person.
      *//*
@@ -119,7 +118,6 @@ public class registreController
     }*/
 
 
-
     /**
      * This will be executed when the button is clicked
      * It increments the count by 1
@@ -150,9 +148,9 @@ public class registreController
 
 
     *//**
- * This will be executed when the button is clicked
- * It increments the count by 1
- **//*
+     * This will be executed when the button is clicked
+     * It increments the count by 1
+     **//*
     @FXML
     private void validerListener(ActionEvent event) throws Exception
     {
@@ -171,4 +169,3 @@ public class registreController
 
     }*/
 }
-

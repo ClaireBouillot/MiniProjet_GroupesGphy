@@ -4,23 +4,15 @@ import Registre.view.Personne;
 import Registre.view.newAjoutController;
 import Registre.view.registreController;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.ArrayList;
 
 /**
@@ -35,6 +27,7 @@ public class Main extends Application
 {
     private static Stage primaryStage;
     private static BorderPane rootLayout;
+
     private ArrayList<Personne> listeP;
     private Personne P;
 
@@ -57,13 +50,19 @@ public class Main extends Application
     //}
 
     @Override
-    public void start(Stage stage) throws Exception
+    public void start(Stage primaryStage) throws Exception
     {
-        this.primaryStage=stage;
-        this.primaryStage.setTitle("Registre");
 
-        initRootLayout();
-        showOverview();
+
+
+
+
+        primaryStage.setTitle("Registre");
+
+        initRootLayout(primaryStage);
+        showOverview(primaryStage);
+        primaryStage.show();
+
 
         /*listeP=new ArrayList<Personne>();
         SimpleDate date = new SimpleDate(12,2,2008);
@@ -79,10 +78,15 @@ public class Main extends Application
         // Show the Stage (window)
         //stage.show();
 
+
+
     }
 
-    public void initRootLayout() throws IOException {
+    public void initRootLayout(Stage primaryStage) throws IOException {
         try {
+
+
+
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/newfx.fxml"));//Main.class.getResource("fx.fxml"));
             rootLayout = loader.load();
@@ -95,7 +99,7 @@ public class Main extends Application
         }
     }
 
-    public void showOverview() throws IOException {
+    public void showOverview(Stage primaryStage) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/overView.fxml"));

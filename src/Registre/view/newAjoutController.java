@@ -110,7 +110,7 @@ public class newAjoutController {
             errorMessage += "Nom non valide!\n";
         }
         if (prenomField.getText() == null || prenomField.getText().length() == 0) {
-            errorMessage += "Prénom non valide!\n";
+            errorMessage += "PrÃ©nom non valide!\n";
         }
         if (dateNaissance.getValue() == null || dateNaissance.getValue() == null) {
             errorMessage += "Date de naissance non valide!\n";

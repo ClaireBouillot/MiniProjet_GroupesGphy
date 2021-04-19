@@ -2,12 +2,20 @@
   <library name="lib">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../../../javafx/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../javafx15/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../javafx15/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="file://$PROJECT_DIR$/../../../../javafx/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../javafx15/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../javafx15/lib" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/../../../../javafx/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../javafx15/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../javafx15/lib" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/../../../../javafx/lib" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../javafx15/lib" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../javafx15/lib" recursive="false" type="SOURCES" />
   </library>
 </component>

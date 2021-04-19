@@ -1,6 +1,7 @@
 package Registre;
 
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -35,6 +36,7 @@ public class Valider
     private ComboBox promotion;
     private ComboBox option;
     private TableView table;
+    private ObservableList test;
     public Valider() {
        
     }
@@ -45,7 +47,11 @@ public class Valider
     @FXML
     private void validerListener(ActionEvent event) throws Exception
     {
+        System.out.println("toto");
         table.getItems().add(1,Nom.getText());
+        test=option.getItems();
+        System.out.println(test);
+
         
         //int i;
       

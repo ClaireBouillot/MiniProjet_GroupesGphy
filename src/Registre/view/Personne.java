@@ -1,12 +1,19 @@
 package Registre.view;
 
+import Registre.Main;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.control.ChoiceBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
+import java.time.Month;
 
 /**
  * Décrivez votre classe Personne ici.
@@ -72,5 +79,5 @@ public class Personne
     }
     public String getOptionP() { return optionP.get(); }
     public StringProperty optionProperty(){ return optionP; }
-   
+
 }
