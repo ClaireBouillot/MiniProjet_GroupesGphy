@@ -1,6 +1,10 @@
 package Registre.view;
 
-import Registre.SimpleDate;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.scene.control.ChoiceBox;
 
 import java.time.LocalDate;
 
@@ -14,53 +18,59 @@ public class Personne
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
-    private String nomP;
-    private String prenomP;
-    private String promoP;
-    private LocalDate annivP;
-    private String optionP;
+    private StringProperty nomP;
+    private StringProperty prenomP;
+    private StringProperty promoP;//ObjectProperty<ChoiceBox<String>> promoP;
+    private ObjectProperty<LocalDate> annivP;
+    private StringProperty optionP;
 
-    public Personne(String nom, String prenom, LocalDate anniv,String promo,  String option) {
-        this.nomP = nom;
-        this.prenomP = prenom;
-        this.promoP = promo;
-        this.annivP = anniv;
-        this.optionP = option;
+    /**
+     * Default constructor.
+     */
+    public Personne() {
+        this(null, null, null, null, null);
+    }
+
+    public Personne(String nom, String prenom, LocalDate anniv, String promo, String option) {
+        this.nomP = new SimpleStringProperty(nom);
+        this.prenomP = new SimpleStringProperty(prenom);
+        this.promoP = new SimpleStringProperty(promo);
+        this.annivP = new SimpleObjectProperty<LocalDate>(anniv);
+        this.optionP = new SimpleStringProperty(option);
     }
 
     public void setNomP(String nomP) {
-        this.nomP = nomP;
+        this.nomP.set(nomP);
     }
     public String getNomP() {
-        return nomP;
+        return nomP.get();
     }
+    public StringProperty nomProperty(){ return nomP; }
 
-    public void setPrenomP(String prenomP) {
-        this.prenomP = prenomP;
-    }
+    public void setPrenomP(String prenomP) { this.prenomP.set(prenomP); }
     public String getPrenomP() {
-        return prenomP;
+        return prenomP.get();
     }
+    public StringProperty prenomProperty(){ return prenomP; }
 
-    public void setPromoP(String promoP) {
-        this.promoP = promoP;
-    }
+    public void setPromoP(String promoP) { this.promoP.set(promoP); }
     public String getPromoP() {
-        return promoP;
+        return promoP.get();
     }
+    public StringProperty promoProperty(){ return promoP; }
 
     public void setAnnivP(LocalDate annivP) {
-        this.annivP = annivP;
+        this.annivP.set(annivP);
     }
     public LocalDate getAnnivP() {
-        return annivP;
+        return annivP.get();
     }
+    public ObjectProperty<LocalDate> annivProperty(){ return annivP; }
 
     public void setOptionP(String optionP) {
-        this.optionP = optionP;
+        this.optionP.set(optionP);
     }
-    public String getOptionP() {
-        return optionP;
-    }
+    public String getOptionP() { return optionP.get(); }
+    public StringProperty optionProperty(){ return optionP; }
    
 }

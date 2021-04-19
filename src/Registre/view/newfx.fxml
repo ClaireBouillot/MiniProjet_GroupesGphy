@@ -1,46 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Registre.view.registreController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Registre.view.registreController">
    <top>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-          <Button mnemonicParsing="false" onAction="#showAjouter" text="Ajouter" />
+          <Button mnemonicParsing="false" onAction="#handleNewPerson" text="Ajouter" />
             <Button mnemonicParsing="false" text="Modifier" />
             <Button mnemonicParsing="false" text="Supprimer" />
         </items>
       </ToolBar>
    </top>
-   <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="599.0">
-               <children>
-                  <TableView fx:id="table" editable="true" prefHeight="358.0" prefWidth="599.0">
-                     <columns>
-                        <TableColumn prefWidth="40.000001192092896">
-                           <graphic>
-                              <CheckBox mnemonicParsing="false" />
-                           </graphic>
-                        </TableColumn>
-                        <TableColumn fx:id="nomCol" prefWidth="110.39999008178711" text="Nom" />
-                        <TableColumn fx:id="prenomCol" prefWidth="100.0" text="Prénom" />
-                        <TableColumn fx:id="dateNCol" prefWidth="135.20008850097656" text="Date de naissance" />
-                        <TableColumn fx:id="promotionCol" prefWidth="101.5999755859375" text="Promotion" />
-                        <TableColumn fx:id="optionCol" prefWidth="105.60003662109375" text="Option" />
-                     </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
-   </center>
-</fx:root>
+</BorderPane>

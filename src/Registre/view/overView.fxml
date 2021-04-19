@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Registre.view.registreController">
+   <children>
+      <TableView fx:id="table" editable="true" prefHeight="400.0" prefWidth="600.0">
+         <columns>
+            <TableColumn prefWidth="40.000001192092896">
+               <graphic>
+                  <CheckBox mnemonicParsing="false" />
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="nomCol" prefWidth="110.39999008178711" text="Nom" />
+            <TableColumn fx:id="prenomCol" prefWidth="100.0" text="Prénom" />
+            <TableColumn fx:id="dateNCol" prefWidth="135.20008850097656" text="Date de naissance" />
+            <TableColumn fx:id="promotionCol" prefWidth="101.5999755859375" text="Promotion" />
+            <TableColumn fx:id="optionCol" prefWidth="105.60003662109375" text="Option" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
