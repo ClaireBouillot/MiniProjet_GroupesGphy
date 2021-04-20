@@ -4,6 +4,8 @@ import Registre.view.Personne;
 import Registre.view.newAjoutController;
 import Registre.view.registreController;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,6 +15,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 
 /**
@@ -31,37 +35,33 @@ public class Main extends Application
     private ArrayList<Personne> listeP;
     private Personne P;
 
-    //ObservableList<Personne> personData = FXCollections.observableArrayList();
+    static ObservableList<Personne> personData = FXCollections.observableArrayList();
 
     /**
      * Constructor
      */
     public Main() {
-
-        //personData.add(new Personne("Villard", "Rachel",LocalDate.of(1999, Month.JANUARY,1),"M1","Biotech"));
+        personData.add(new Personne("Villard", "Rachel", LocalDate.of(1999, Month.JANUARY,1),"M1","Biotech"));
     }
 
     /**
      * Returns the data as an observable list of Persons.
      * @return
      */
-    //public ObservableList<Personne> getPersonnes() {
-    //    return personData;
-    //}
+    public static ObservableList<Personne> getPersonnes() {
+        return personData;
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception
     {
 
+        this.primaryStage=primaryStage;
+        this.primaryStage.setTitle("Registre");
 
+        initRootLayout();
+        showOverview();
 
-
-
-        primaryStage.setTitle("Registre");
-
-        initRootLayout(primaryStage);
-        showOverview(primaryStage);
-        primaryStage.show();
 
 
         /*listeP=new ArrayList<Personne>();
@@ -82,24 +82,23 @@ public class Main extends Application
 
     }
 
-    public void initRootLayout(Stage primaryStage) throws IOException {
+    public void initRootLayout() throws IOException {
         try {
 
-
-
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/newfx.fxml"));//Main.class.getResource("fx.fxml"));
+            loader.setLocation(Main.class.getResource("view/newfx.fxml"));
             rootLayout = loader.load();
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+            primaryStage.show();
 
         } catch (IOException e){
             e.printStackTrace();
         }
     }
 
-    public void showOverview(Stage primaryStage) throws IOException {
+    public void showOverview() throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/overView.fxml"));
@@ -109,6 +108,7 @@ public class Main extends Application
 
             registreController controller = loader.getController();
             controller.setMainApp(this);
+            //primaryStage.show();
         } catch (IOException e){
             e.printStackTrace();
         }
