@@ -15,8 +15,8 @@ import static Registre.Main.getPersonnes;
 public class newAjoutController {
 
     //registreController ajout;
-    ObservableList<String> promotionList = FXCollections.observableArrayList("L3", "M1", "M2");
-    ObservableList<String> optionList = FXCollections.observableArrayList("Physio", "Biotech", "Imageur");
+    ObservableList<String> promotionList = FXCollections.observableArrayList("Selectionner","L3", "M1", "M2");
+    ObservableList<String> optionList = FXCollections.observableArrayList("Selectionner","Physio", "Biotech", "Imageur");
 
     @FXML
     private TextField nomField;
@@ -40,9 +40,9 @@ public class newAjoutController {
      */
     @FXML
     private void initialize() {
-        promotionBox.setValue("L3");
+        promotionBox.setValue("Selectionner");
         promotionBox.setItems(promotionList);
-        optionBox.setValue("Physio");
+        optionBox.setValue("Selectionner");
         optionBox.setItems(optionList);
     }
 
