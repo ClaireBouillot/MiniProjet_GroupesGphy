@@ -5,8 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Registre.view.registreController">
+<AnchorPane fx:id="overView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Registre.view.registreController">
    <children>
       <TableView fx:id="table" editable="true" prefHeight="400.0" prefWidth="600.0">
          <columns>
@@ -15,7 +14,7 @@
                   <CheckBox mnemonicParsing="false" />
                </graphic>
             </TableColumn>
-            <TableColumn fx:id="nom" prefWidth="110.39999008178711" text="Nom" />
+            <TableColumn fx:id="nomCol" prefWidth="110.39999008178711" text="Nom" />
             <TableColumn fx:id="prenomCol" prefWidth="100.0" text="Prénom" />
             <TableColumn fx:id="dateNCol" prefWidth="135.20008850097656" text="Date de naissance" />
             <TableColumn fx:id="promotionCol" prefWidth="101.5999755859375" text="Promotion" />

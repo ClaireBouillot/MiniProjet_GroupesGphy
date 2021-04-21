@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Calendar;
 
+import static Registre.Main.getPersonnes;
+
 public class newAjoutController {
 
     //registreController ajout;
@@ -144,18 +146,20 @@ public class newAjoutController {
         }
     }
 
-    @FXML
+/*    @FXML
     public void validerAjout() {
-      /*  registreController.getPersonnes().add(new Personne(prenomField.getText(),
+
+
+        getPersonnes().add(new Personne(prenomField.getText(),
                 nomField.getText(),
                 dateNaissance.getValue(),
                 promotionBox.getAccessibleText(),
-                optionBox.getAccessibleText()));*/
+                optionBox.getAccessibleText()));
 
         System.out.println("Displaying");
 
         //ajout.ajouterUnePersonne(newPersonne);
         //table.getItem().add(newPersonne);
-    }
+    }*/
 
 }

@@ -54,7 +54,7 @@ public class registreController {
      * Initializes the controller class. This method is automatically called
      * after the fxml file has been loaded.
      */
-    /**@FXML
+    @FXML
     private void initialize() {
         nomCol.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
         prenomCol.setCellValueFactory(cellData -> cellData.getValue().prenomProperty());
@@ -64,7 +64,7 @@ public class registreController {
 
         table.setItems(Main.getPersonnes());
 
-    }*/
+    }
 
     /**
      * Is called by the main application to give a reference back to itself.
@@ -83,7 +83,7 @@ public class registreController {
      */
     @FXML
     private void handleNewPerson() {
-        System.out.println("toto");
+        //System.out.println("toto");
         Personne tempPerson = new Personne();
         main.showPersonEditDialog(tempPerson);
        /** boolean okClicked = main.showPersonEditDialog(tempPerson);

@@ -7,7 +7,6 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -41,8 +40,6 @@ public class Main extends Application
      * Constructor
      */
     public Main() {
-
-
         personData.add(new Personne("Villard", "Rachel", LocalDate.of(1999, Month.JANUARY,1),"M1","Biotech"));
     }
 
@@ -62,7 +59,7 @@ public class Main extends Application
         this.primaryStage.setTitle("Registre");
 
         initRootLayout();
-        showOverview();
+        //showOverview();
 
 
 
@@ -84,37 +81,39 @@ public class Main extends Application
 
     }
 
-    public void initRootLayout() throws IOException {
+    /**
+     * Initializes the root layout.
+     */
+    public void initRootLayout() {
         try {
-
+            // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/newfx.fxml"));
-            rootLayout = loader.load();
+            rootLayout = (BorderPane) loader.load();
 
+            // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
-
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void showOverview() throws IOException {
+/*    public void showOverview() throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/overView.fxml"));
             AnchorPane overView = (AnchorPane) loader.load();
-
             rootLayout.setCenter(overView);
 
             registreController controller = loader.getController();
             controller.setMainApp(this);
-            //primaryStage.show();
+
         } catch (IOException e){
             e.printStackTrace();
         }
-    }
+    }*/
 
     /**
      * Opens a dialog to edit details for the specified person. If the user
@@ -130,7 +129,7 @@ public class Main extends Application
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/newAjout.fxml"));
             BorderPane page = (BorderPane) loader.load();
-            System.out.println("test1");
+
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Ajouter une personne");
@@ -138,12 +137,12 @@ public class Main extends Application
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-            System.out.println("test2");
+
             // Set the person into the controller.
             newAjoutController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setPerson(person);
-            System.out.println("test3");
+
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
 

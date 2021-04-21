@@ -39,7 +39,7 @@ public class Personne
     }
 
     public Personne(String nom, String prenom, LocalDate anniv, String promo, String option) {
-        this.nom = new SimpleStringProperty("nom");
+        this.nom = new SimpleStringProperty(nom);
         this.prenomP = new SimpleStringProperty(prenom);
         this.promoP = new SimpleStringProperty(promo);
         this.annivP = new SimpleObjectProperty<LocalDate>(anniv);
