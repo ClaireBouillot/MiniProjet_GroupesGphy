@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.time.Month;
 
+import static Registre.Main.getPersonnes;
+
 /**
  * Listener pour l'ajout
  *
@@ -36,19 +38,7 @@ public class registreController {
     private static Stage stage;
 
     public registreController() throws Exception {
-
-        //main=new Main();
-
-
     }
-
-   /* ObservableList<Personne> personData = FXCollections.observableArrayList();
-
-    public void ObservableList<Personne> getPersonnes() {
-        personData.add(new Personne("Villard", "Rachel", LocalDate.of(1999, Month.JANUARY, 1), "M1", "Biotech"));
-
-        return personData;
-    }*/
 
     /**
      * Initializes the controller class. This method is automatically called
@@ -62,7 +52,7 @@ public class registreController {
         promotionCol.setCellValueFactory(cellData -> cellData.getValue().promoProperty());
         optionCol.setCellValueFactory(cellData -> cellData.getValue().optionProperty());
 
-        table.setItems(Main.getPersonnes());
+        table.setItems(getPersonnes());
 
     }
 
@@ -74,7 +64,7 @@ public class registreController {
     public void setMainApp(Main newMain) {
         main = newMain;
         // Add observable list data to the table
-        table.setItems(Main.getPersonnes());
+        table.setItems(getPersonnes());
     }
 
     /**
@@ -85,11 +75,11 @@ public class registreController {
     private void handleNewPerson() {
         //System.out.println("toto");
         Personne tempPerson = new Personne();
-        main.showPersonEditDialog(tempPerson);
-       /** boolean okClicked = main.showPersonEditDialog(tempPerson);
+        //main.showPersonEditDialog(tempPerson);
+        boolean okClicked = main.showPersonEditDialog(tempPerson);
         if (okClicked) {
             getPersonnes().add(tempPerson);
-        }**/
+        }
     }
 
     /**
