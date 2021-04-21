@@ -104,20 +104,6 @@ public class Main extends Application
         }
     }
 
-/*    public void showOverview() throws IOException {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/overView.fxml"));
-            AnchorPane overView = (AnchorPane) loader.load();
-            rootLayout.setCenter(overView);
-
-            registreController controller = loader.getController();
-            controller.setMainApp(this);
-
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-    }*/
 
     /**
      * Opens a dialog to edit details for the specified person. If the user
@@ -131,12 +117,12 @@ public class Main extends Application
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/newAjout.fxml"));
+            loader.setLocation(Main.class.getResource("view/modif.fxml"));
             BorderPane page = (BorderPane) loader.load();
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Ajouter une personne");
+            dialogStage.setTitle("Modifier une personne");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);

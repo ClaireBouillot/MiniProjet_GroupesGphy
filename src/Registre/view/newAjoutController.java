@@ -117,7 +117,7 @@ public class newAjoutController {
             errorMessage += "Nom non valide!\n";
         }
         if (prenomField.getText() == null || prenomField.getText().length() == 0) {
-            errorMessage += "PrÃ©nom non valide!\n";
+            errorMessage += "Prenom non valide!\n";
         }
         if (dateNaissance.getValue() == null || dateNaissance.getValue() == null) {
             errorMessage += "Date de naissance non valide!\n";
@@ -145,21 +145,5 @@ public class newAjoutController {
             return false;
         }
     }
-
-/*    @FXML
-    public void validerAjout() {
-
-
-        getPersonnes().add(new Personne(prenomField.getText(),
-                nomField.getText(),
-                dateNaissance.getValue(),
-                promotionBox.getAccessibleText(),
-                optionBox.getAccessibleText()));
-
-        System.out.println("Displaying");
-
-        //ajout.ajouterUnePersonne(newPersonne);
-        //table.getItem().add(newPersonne);
-    }*/
 
 }

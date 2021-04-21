@@ -4,6 +4,7 @@ import Registre.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -73,9 +74,7 @@ public class registreController {
      */
     @FXML
     private void handleNewPerson() {
-        //System.out.println("toto");
         Personne tempPerson = new Personne();
-        //main.showPersonEditDialog(tempPerson);
         boolean okClicked = main.showPersonEditDialog(tempPerson);
         if (okClicked) {
             getPersonnes().add(tempPerson);
@@ -86,14 +85,14 @@ public class registreController {
      * Called when the user clicks the edit button. Opens a dialog to edit
      * details for the selected person.
      */
-    /**@FXML
+    @FXML
     private void handleEditPerson() {
         Personne selectedPerson = table.getSelectionModel().getSelectedItem();
         if (selectedPerson != null) {
             boolean okClicked = main.showPersonEditDialog(selectedPerson);
-            if (okClicked) {
-                showPersonEditDialog(selectedPerson);
-            }
+/*            if (okClicked) {
+                //main.showPersonEditDialog(selectedPerson);
+            }*/
 
         } else {
             // Nothing selected.
@@ -105,15 +104,6 @@ public class registreController {
 
             alert.showAndWait();
         }
-    }*/
-
-/*    public void setTableItems(ObservableList<Personne> pers) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("newfx.fxml"));
-        Scene registre = new Scene(loader.load());
-
-        registreController controller = loader.getController();
-        controller.setTableItems(pers);
-    }*/
-
+    }
 
 }
