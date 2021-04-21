@@ -37,7 +37,7 @@ public class registreController {
 
     public registreController() throws Exception {
 
-        main=new Main();
+        //main=new Main();
 
 
     }
