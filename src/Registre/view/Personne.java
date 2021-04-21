@@ -25,7 +25,7 @@ public class Personne
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
-    private StringProperty nomP;
+    private StringProperty nom;
     private StringProperty prenomP;
     private StringProperty promoP;//ObjectProperty<ChoiceBox<String>> promoP;
     private ObjectProperty<LocalDate> annivP;
@@ -39,7 +39,7 @@ public class Personne
     }
 
     public Personne(String nom, String prenom, LocalDate anniv, String promo, String option) {
-        this.nomP = new SimpleStringProperty(nom);
+        this.nom = new SimpleStringProperty("nom");
         this.prenomP = new SimpleStringProperty(prenom);
         this.promoP = new SimpleStringProperty(promo);
         this.annivP = new SimpleObjectProperty<LocalDate>(anniv);
@@ -47,12 +47,12 @@ public class Personne
     }
 
     public void setNomP(String nomP) {
-        this.nomP.set(nomP);
+        this.nom.set(nomP);
     }
     public String getNomP() {
-        return nomP.get();
+        return nom.get();
     }
-    public StringProperty nomProperty(){ return nomP; }
+    public StringProperty nomProperty(){ return nom; }
 
     public void setPrenomP(String prenomP) { this.prenomP.set(prenomP); }
     public String getPrenomP() {

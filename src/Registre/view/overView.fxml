@@ -15,7 +15,7 @@
                   <CheckBox mnemonicParsing="false" />
                </graphic>
             </TableColumn>
-            <TableColumn fx:id="nomCol" prefWidth="110.39999008178711" text="Nom" />
+            <TableColumn fx:id="nom" prefWidth="110.39999008178711" text="Nom" />
             <TableColumn fx:id="prenomCol" prefWidth="100.0" text="Prénom" />
             <TableColumn fx:id="dateNCol" prefWidth="135.20008850097656" text="Date de naissance" />
             <TableColumn fx:id="promotionCol" prefWidth="101.5999755859375" text="Promotion" />

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -32,13 +33,18 @@ public class registreController {
     private TableColumn<Personne, String> promotionCol;
     @FXML
     private TableColumn<Personne, String> optionCol;
+    private static Stage stage;
 
-    public registreController() {
+    public registreController() throws Exception {
+
+        main=new Main();
+
+
     }
-/*
-    ObservableList<Personne> personData = FXCollections.observableArrayList();
 
-    public ObservableList<Personne> getPersonnes() {
+   /* ObservableList<Personne> personData = FXCollections.observableArrayList();
+
+    public void ObservableList<Personne> getPersonnes() {
         personData.add(new Personne("Villard", "Rachel", LocalDate.of(1999, Month.JANUARY, 1), "M1", "Biotech"));
 
         return personData;
@@ -66,7 +72,7 @@ public class registreController {
      * @param newMain
      */
     public void setMainApp(Main newMain) {
-        this.main = newMain;
+        main = newMain;
         // Add observable list data to the table
         table.setItems(Main.getPersonnes());
     }
@@ -77,6 +83,7 @@ public class registreController {
      */
     @FXML
     private void handleNewPerson() {
+        System.out.println("toto");
         Personne tempPerson = new Personne();
         main.showPersonEditDialog(tempPerson);
        /** boolean okClicked = main.showPersonEditDialog(tempPerson);

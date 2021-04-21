@@ -34,13 +34,15 @@ public class Main extends Application
 
     private ArrayList<Personne> listeP;
     private Personne P;
-
+    private registreController control;
     static ObservableList<Personne> personData = FXCollections.observableArrayList();
 
     /**
      * Constructor
      */
     public Main() {
+
+
         personData.add(new Personne("Villard", "Rachel", LocalDate.of(1999, Month.JANUARY,1),"M1","Biotech"));
     }
 
@@ -127,8 +129,8 @@ public class Main extends Application
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/newAjout.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
-
+            BorderPane page = (BorderPane) loader.load();
+            System.out.println("test1");
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Ajouter une personne");
@@ -136,12 +138,12 @@ public class Main extends Application
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-
+            System.out.println("test2");
             // Set the person into the controller.
             newAjoutController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setPerson(person);
-
+            System.out.println("test3");
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
 

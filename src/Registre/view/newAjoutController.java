@@ -16,11 +16,16 @@ public class newAjoutController {
     ObservableList<String> promotionList = FXCollections.observableArrayList("L3", "M1", "M2");
     ObservableList<String> optionList = FXCollections.observableArrayList("Physio", "Biotech", "Imageur");
 
-    @FXML private TextField nomField;
-    @FXML private TextField prenomField;
-    @FXML private DatePicker dateNaissance;
-    @FXML private ChoiceBox<String> promotionBox;
-    @FXML private ChoiceBox<String> optionBox;
+    @FXML
+    private TextField nomField;
+    @FXML
+    private TextField prenomField;
+    @FXML
+    private DatePicker dateNaissance;
+    @FXML
+    private ChoiceBox<String> promotionBox;
+    @FXML
+    private ChoiceBox<String> optionBox;
 
     private Stage dialogStage;
     private Personne person;
@@ -32,7 +37,7 @@ public class newAjoutController {
      * after the fxml file has been loaded.
      */
     @FXML
-    private void initialize(){
+    private void initialize() {
         promotionBox.setValue("L3");
         promotionBox.setItems(promotionList);
         optionBox.setValue("Physio");
@@ -123,7 +128,6 @@ public class newAjoutController {
         }
 
 
-
         if (errorMessage.length() == 0) {
             return true;
         } else {
@@ -139,18 +143,19 @@ public class newAjoutController {
             return false;
         }
     }
-}
-/*    @FXML
-    public void ajoutValider() throws IOException {
-        registreController.getPersonnes().add(new Personne(prenomField.getText(),
+
+    @FXML
+    public void validerAjout() {
+      /*  registreController.getPersonnes().add(new Personne(prenomField.getText(),
                 nomField.getText(),
                 dateNaissance.getValue(),
                 promotionBox.getAccessibleText(),
-                optionBox.getAccessibleText()));
+                optionBox.getAccessibleText()));*/
 
         System.out.println("Displaying");
 
         //ajout.ajouterUnePersonne(newPersonne);
         //table.getItem().add(newPersonne);
-    }*/
+    }
 
+}
