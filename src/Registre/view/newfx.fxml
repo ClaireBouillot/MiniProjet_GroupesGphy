@@ -18,9 +18,9 @@
       </ToolBar>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="606.0" BorderPane.alignment="CENTER">
+      <AnchorPane BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="table" editable="true" prefHeight="360.0" prefWidth="600.0">
+            <TableView fx:id="table" editable="true" prefHeight="360.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columns>
                   <TableColumn fx:id="nomCol" prefWidth="110.39999008178711" text="Nom" />
                   <TableColumn fx:id="prenomCol" prefWidth="100.0" text="Prénom" />
