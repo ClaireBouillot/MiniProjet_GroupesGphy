@@ -25,11 +25,11 @@ public class Personne
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
-    private StringProperty nom;
-    private StringProperty prenomP;
-    private StringProperty promoP;//ObjectProperty<ChoiceBox<String>> promoP;
-    private ObjectProperty<LocalDate> annivP;
-    private StringProperty optionP;
+    private final StringProperty nom;
+    private final StringProperty prenomP;
+    private final StringProperty promoP;//ObjectProperty<ChoiceBox<String>> promoP;
+    private final ObjectProperty<LocalDate> annivP;
+    private final StringProperty optionP;
 
     /**
      * Default constructor.

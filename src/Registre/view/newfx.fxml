@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Registre.view.registreController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Registre.view.registreController">
    <top>
-      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ToolBar prefHeight="40.0" prefWidth="200.0" stylesheets="@test.css" BorderPane.alignment="CENTER">
         <items>
           <Button mnemonicParsing="false" onAction="#handleNewPerson" text="Ajouter" />
             <Button mnemonicParsing="false" onAction="#handleEditPerson" text="Modifier" />
@@ -20,7 +20,7 @@
    <center>
       <AnchorPane BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="table" editable="true" prefHeight="360.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="table" editable="true" prefHeight="360.0" prefWidth="600.0" stylesheets="@test.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columns>
                   <TableColumn fx:id="nomCol" prefWidth="110.39999008178711" text="Nom" />
                   <TableColumn fx:id="prenomCol" prefWidth="100.0" text="Prénom" />

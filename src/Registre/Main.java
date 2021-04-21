@@ -41,6 +41,7 @@ public class Main extends Application
      */
     public Main() {
         personData.add(new Personne("Villard", "Rachel", LocalDate.of(1999, Month.JANUARY,1),"M1","Biotech"));
+        System.out.println(personData.get(0));
     }
 
     /**
@@ -141,6 +142,9 @@ public class Main extends Application
             e.printStackTrace();
             return false;
         }
+    }
+    public ObservableList<Personne> getPersonData() {
+        return personData;
     }
 
     /**
