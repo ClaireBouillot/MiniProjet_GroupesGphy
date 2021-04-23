@@ -6,12 +6,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.awt.event.ActionEvent;
-import java.io.IOException;
-import java.util.Calendar;
+/**
+ * Projet IHM
+ * Lie fichier FXML et code avec java
+ *
+ * @author GROUPE 12 Villard Rachel, Bouillot Claire, Tella Lucie
+ * @version 23/04/2021
+ */
 
-import static Registre.Main.getPersonnes;
-
+/**
+ * Listener pour la validation
+ **/
 public class newAjoutController {
 
     //registreController ajout;
@@ -32,11 +37,12 @@ public class newAjoutController {
     private Stage dialogStage;
     private Personne person;
     private boolean okClicked = false;
-    //TableView tableV = new TableView(registreController.getPersonnes());
+
 
     /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
+     * Initialise la classe du controller.
+     * Cette méthode est automatiquement appelée après le chargement du fichier fxml newAjout.
+     *
      */
     @FXML
     private void initialize() {
@@ -47,7 +53,7 @@ public class newAjoutController {
     }
 
     /**
-     * Sets the stage of this dialog.
+     * Changer la page de dialogue
      *
      * @param dialogStage
      */
@@ -56,7 +62,7 @@ public class newAjoutController {
     }
 
     /**
-     * Sets the person to be edited in the dialog.
+     * changer la personne qui doit etre éditée
      *
      * @param person
      */
@@ -71,7 +77,7 @@ public class newAjoutController {
     }
 
     /**
-     * Returns true if the user clicked OK, false otherwise.
+     * Retourne vrai si l'utilisateur clique sur ok.
      *
      * @return
      */
@@ -80,7 +86,8 @@ public class newAjoutController {
     }
 
     /**
-     * Called when the user clicks ok.
+     * Appelle handleOk quand l'utilisateur clique sur Ok.
+     * charge les données de la personne
      */
     @FXML
     private void handleOk() {
@@ -98,7 +105,7 @@ public class newAjoutController {
     }
 
     /**
-     * Called when the user clicks cancel.
+     * Appelle quand l'utilisateur click sur fermé.
      */
     @FXML
     private void handleCancel() {
@@ -106,9 +113,9 @@ public class newAjoutController {
     }
 
     /**
-     * Validates the user input in the text fields.
+     *Valide si les champs sont remplies.
      *
-     * @return true if the input is valid
+     * @return true si les champs sont valides
      */
     private boolean isInputValid() {
         String errorMessage = "";
@@ -133,7 +140,7 @@ public class newAjoutController {
         if (errorMessage.length() == 0) {
             return true;
         } else {
-            // Show the error message.
+            // Montre un message d'erreur.
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Invalid Fields");

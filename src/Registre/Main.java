@@ -19,13 +19,15 @@ import java.time.Month;
 import java.util.ArrayList;
 
 /**
- * The StepTwo of JavafX tutorial
- * Linking FXML and java code via java
+ * Projet IHM
+ * Lie fichier FXML et code avec java
  *
- * @author Patrick Girard
- * @version 22/03/2020
+ * @author GROUPE 12 Villard Rachel, Bouillot Claire, Tella Lucie
+ * @version 23/04/2021
  */
-
+/**
+ * Main de l'application
+ **/
 public class Main extends Application
 {
     private static Stage primaryStage;
@@ -37,7 +39,7 @@ public class Main extends Application
     static ObservableList<Personne> personData = FXCollections.observableArrayList();
 
     /**
-     * Constructor
+     * Constructeur du Main
      */
     public Main() {
         personData.add(new Personne("Villard", "Rachel", LocalDate.of(1999, Month.JANUARY,1),"M1","Biotech"));
@@ -45,13 +47,17 @@ public class Main extends Application
     }
 
     /**
-     * Returns the data as an observable list of Persons.
+     * Retourne les valeurs de la liste observable des personnes
      * @return
      */
     public static ObservableList<Personne> getPersonnes() {
         return personData;
     }
-
+    /**
+     * Prend en paramètre la fenêtre
+     * utilise initRootLayout
+     *
+     */
     @Override
     public void start(Stage primaryStage) throws Exception
     {
@@ -60,39 +66,21 @@ public class Main extends Application
         this.primaryStage.setTitle("Registre");
 
         initRootLayout();
-        //showOverview();
-
-
-
-        /*listeP=new ArrayList<Personne>();
-        SimpleDate date = new SimpleDate(12,2,2008);
-        P=new Personne("toto","tutu",date,"m1","biotech");
-        listeP.add(P);
-
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fx.fxml"));
-       Scene scene = new Scene (root);
-
-        stage.setTitle("Registre");
-        stage.setScene(scene);*/
-
-        // Show the Stage (window)
-        //stage.show();
-
-
 
     }
 
     /**
-     * Initializes the root layout.
+     * Initialise le root layout
+     *
      */
     public void initRootLayout() {
         try {
-            // Load root layout from fxml file.
+            // charge le root layout du fichier newfx.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/newfx.fxml"));
             rootLayout = (BorderPane) loader.load();
 
-            // Show the scene containing the root layout.
+            // Montre le contenu de root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -107,21 +95,20 @@ public class Main extends Application
 
 
     /**
-     * Opens a dialog to edit details for the specified person. If the user
-     * clicks OK, the changes are saved into the provided person object and true
-     * is returned.
+     * Ouvre la page de dialogue pour enregistrer une personne.
+     * Si l'utilisateur clique sur valider la personne est enregistrée.
      *
-     * @param person the person object to be edited
-     * @return true if the user clicked OK, false otherwise.
+     * @param person la personne est l'objet a enregistrer
+     *
      */
     public boolean showPersonEditDialog(Personne person) {
         try {
-            // Load the fxml file and create a new stage for the popup dialog.
+            // charge le fichier fxml et créer une nouvelle page pour le dialogue.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/modif.fxml"));
             BorderPane page = (BorderPane) loader.load();
 
-            // Create the dialog Stage.
+            // Créer la page de dialogue.
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Modifier une personne");
             dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -129,12 +116,12 @@ public class Main extends Application
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
-            // Set the person into the controller.
+            // passe la personne dans la controller.
             newAjoutController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setPerson(person);
 
-            // Show the dialog and wait until the user closes it
+            // montrer la page dialogue et attendre que l'utilisateur la ferme.
             dialogStage.showAndWait();
 
             return controller.isOkClicked();
@@ -148,13 +135,15 @@ public class Main extends Application
     }
 
     /**
-     * Returns the main stage.
+     * Retourne la page du main.
      * @return
      */
     public Stage getPrimaryStage() {
         return primaryStage;
     }
-
+    /**
+     * lance le programme
+     */
     public static void Main(String[] args) {
         launch(args);
     }

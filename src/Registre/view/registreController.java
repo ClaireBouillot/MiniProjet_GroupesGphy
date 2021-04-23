@@ -1,25 +1,25 @@
 package Registre.view;
 
 import Registre.Main;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.time.LocalDate;
-import java.time.Month;
-
 import static Registre.Main.getPersonnes;
 
 /**
- * Listener pour l'ajout
+ * Projet IHM
+ * Lie fichier FXML et code avec java
  *
- * @author CLaire, Lucie, Rachel
- * @version 16/03/2021
+ * @author GROUPE 12 Villard Rachel, Bouillot Claire, Tella Lucie
+ * @version 23/04/2021
+ */
+/**
+ * Listener pour l'ajout
+ * Listener Modification
+ * Listener Suppression
  **/
 public class registreController {
     private Main main;
@@ -42,8 +42,7 @@ public class registreController {
     }
 
     /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
+     * Initialise la classe du controller, cette méthode est appelée après le chargement de newfx.fxml
      */
     @FXML
     private void initialize() {
@@ -58,19 +57,19 @@ public class registreController {
     }
 
     /**
-     * Is called by the main application to give a reference back to itself.
+     * Appelé par le main de l'application pour faire référence à elle même.
      *
      * @param newMain
      */
     public void setMainApp(Main newMain) {
         main = newMain;
-        // Add observable list data to the table
+        // Charge la liste des données du tableaux
         table.setItems(getPersonnes());
     }
 
     /**
-     * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new person.
+     * Appellé lorsque l'utilisateur appuie sur le boutton ajouter
+     * Ouvre la page de dialogue
      */
     @FXML
     private void handleNewPerson() {
@@ -82,20 +81,17 @@ public class registreController {
     }
 
     /**
-     * Called when the user clicks the edit button. Opens a dialog to edit
-     * details for the selected person.
+     * Appellé lorsque l'utilisateur appuie pour modifier.
+     * Ouvre la page de dialogue pour modifier une personne.
      */
     @FXML
     private void handleEditPerson() {
         Personne selectedPerson = table.getSelectionModel().getSelectedItem();
         if (selectedPerson != null) {
             boolean okClicked = main.showPersonEditDialog(selectedPerson);
-/*            if (okClicked) {
-                //main.showPersonEditDialog(selectedPerson);
-            }*/
 
         } else {
-            // Nothing selected.
+            // Si rien n'est sélectionné, apparition d'un message d'erreur.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(main.getPrimaryStage());
             alert.setTitle("No Selection");
@@ -107,7 +103,8 @@ public class registreController {
     }
 
     /**
-     * Called when the user clicks on the delete button.
+     * Appellé quand l'utilisateur appuie sur le boutton supprimer
+     *
      */
     @FXML
     private void handleDeletePerson() {
@@ -115,7 +112,7 @@ public class registreController {
         if (selectedIndex >= 0) {
             table.getItems().remove(selectedIndex);
         } else {
-            // Nothing selected.
+            // Si personne n'est sélectionné, apparition d'un message d'erreur.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(main.getPrimaryStage());
             alert.setTitle("No Selection");
