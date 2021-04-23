@@ -4,44 +4,44 @@ import java.util.*;
 import java.text.*;
 
 /**
- * A simple implementation of dates
+ * Implémentation des dates
  * 
- * @author Patrick Girard 
- * @version 13/08/2010
+ * @author Group 12
+ * @version 23/04/2021
  */
 public class SimpleDate
 {
-    // instance variables - replace the example below with your own
+    // variable d'instance
     private Date date;
     
-    // For formatting the dates
+    // Pour formater les dates
     private static final SimpleDateFormat formatDate = new SimpleDateFormat("dd/MM/yyyy");
     private static final SimpleDateFormat formatHour = new SimpleDateFormat("hh:mm");
 
     /**
-     * Constructor for objects of class SimpleDate
+     * Constructeur
      */
     public SimpleDate()
     {
-        // initialise instance variables
+        // initialisation de variables d'instances
         date = new Date();
     }
 
     /**
-         * Constructor for objects of class SimpleDate
-         */
-        public SimpleDate(int day, int month, int year)
-        {
-            // initialise instance variables
-            Calendar c = Calendar.getInstance();
-            c.set(year, month, day);
-            date = c.getTime();
-        }
+     * Constructeur
+     */
+    public SimpleDate(int day, int month, int year)
+    {
+        // initialisation des variables d'instances
+        Calendar c = Calendar.getInstance();
+        c.set(year, month, day);
+        date = c.getTime();
+    }
         
     /**
-     * Return the date in a complete text format - jj/mm/aaaa hh:mm
+     * Retourne une date sous le format : jj/mm/aaaa hh:mm
      * 
-     * @return     the date in String format
+     * @return     la date sous forme de string
      */
     public String getCompleteDate()
     {
@@ -50,9 +50,9 @@ public class SimpleDate
     }
     
     /**
-     * Return the date in a simple text format - jj/mm/aaaa
+     * Retounre la date sous le format : jj/mm/aaaa
      * 
-     * @return     the date in String format
+     * @return     la date sous forme de string
      */
     public String getDate()
     {
@@ -60,9 +60,9 @@ public class SimpleDate
     }
     
     /**
-     * Return the hour in a simple text format - hh:mm
+     * Retounre l'heure sous le format  : hh:mm
      * 
-     * @return     the hour in String format 
+     * @return     l'heure sous forme de string
      */
     
     public String getTime()
@@ -71,9 +71,9 @@ public class SimpleDate
     }
     
     /**
-     * Return the year of the current date
+     * Retounre l'année de la doate courante
      * 
-     * @return     the year in int format
+     * @return     l'année au format integer
      */
     
     public int getYear()
@@ -83,9 +83,9 @@ public class SimpleDate
     }
     
     /**
-     * Return the month of the current date
+     * Retourne le mois de la date courante
      * 
-     * @return     the month in int format
+     * @return     le mois sous format integer
      */
     
     public int getMonth()
@@ -95,9 +95,9 @@ public class SimpleDate
     }
     
     /**
-     * Return the day of the current date
+     * Retounre le jour de la date courante
      * 
-     * @return     the day in int format
+     * @return     le jour dans un format integer
      */
     
     public int getDay()
@@ -107,9 +107,9 @@ public class SimpleDate
     }    
     
     /**
-     * Return the hour of the current date
+     * Retounre l'heure de la date courante
      * 
-     * @return     the hour in int format
+     * @return     l'heure en integer
      */
     
     public int getHour()
@@ -119,9 +119,9 @@ public class SimpleDate
     }    
     
     /**
-     * Return the minutes of the current date
+     * Retounre les minutes de la date courante
      * 
-     * @return     the minutes in int format
+     * @return   les minutes en integer
      */
     
     public int getMinute()
